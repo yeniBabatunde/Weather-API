@@ -1,5 +1,5 @@
 //
-//  extension + Color.swift
+//  Color+Extension.swift
 //  WeatherMood
 //
 //  Created by Sharon Omoyeni Babatunde on 15/01/2025.
