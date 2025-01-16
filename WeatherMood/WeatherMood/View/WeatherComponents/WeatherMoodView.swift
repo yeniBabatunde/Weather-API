@@ -14,45 +14,51 @@ struct WeatherMoodView: View {
         
         VStack(spacing: 20) {
             VStack(spacing: 8) {
-                Image("moody")
-                    .resizable()
-                    .frame(width: 123, height: 113)
+                WeatherIconView(
+                    iconURL: weatherData.current?.condition?.imageIconURL ?? "",
+                    width: 123,
+                    height: 113, imageData: weatherData.current?.condition?.imageData ?? Data()
+                )
                 
                 HStack {
-                    Text("Hyderabad")
+                    Text(weatherData.location?.name ?? "")
                         .font(CustomFont.poppinsSemiBold.font(size: 30, weight: .semibold))
                     Image(systemName: "location.fill")
                         .foregroundColor(._2C2C2C)
                 }
-                
-                Text("31°")
-                    .font(CustomFont.poppinsMedium.font(size: 70, weight: .medium))
+                ZStack(alignment: .topTrailing) {
+                    Text("\(weatherData.current?.tempC?.clean ?? "0")")
+                        .font(CustomFont.poppinsMedium.font(size: 70, weight: .medium))
+                    
+                    Text("°")
+                        .font(CustomFont.poppinsRegular.font(size: 30))
+                        .foregroundColor(._2C2C2C)
+                        .offset(x: 13, y: -10)
+                }
             }
             .frame(maxWidth: .infinity)
             .background(Color.clear)
             
-            //MARK: Weather Metrics Container
             VStack(spacing: 12) {
                 HStack(spacing: 20) {
                     MetricItemView(
                         title: "Humidity",
-                        value: "20%",
+                        value: "\(weatherData.current?.humidity ?? 0)%",
                         titleSize: 12
                     )
                     Spacer()
                     MetricItemView(
                         title: "UV",
-                        value: String(4),
+                        value: String(weatherData.current?.uv?.clean ?? "0"),
                         titleSize: 12
                     )
                     Spacer()
                     MetricItemView(
                         title: "Feels Like",
-                        value: "38°",
+                        value: "\(weatherData.current?.feelslikeC?.clean ?? "0")°",
                         titleSize: 8
                     )
                 }
-                
             }
             .frame(width: 274, height: 75, alignment: .center)
             .padding(.horizontal, 20)
@@ -60,10 +66,10 @@ struct WeatherMoodView: View {
             .cornerRadius(16)
             .offset(x: 0, y: 0)
         }
-        .padding()
+        .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
     }
 }
 
 #Preview {
-    WeatherMoodView(weatherData: WeatherData())
+    WeatherMoodView(weatherData: JustSampleData.sampleWeatherData())
 }

@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct EmptyStateView: View {
+    
+    var titleText: String
+    var subtitleText: String
+    
     var body: some View {
         VStack(spacing: 12) {
-            Text(Constants.Strings.noCitySelected)
+            Text(titleText)
                 .font(CustomFont.poppinsBold.font(size: 30, weight: .semibold))
                 .foregroundColor(._2C2C2C)
             
-            Text(Constants.Strings.searchForCity)
+            Text(subtitleText)
                 .font(CustomFont.poppinsBold.font(size: 15, weight: .semibold))
                 .foregroundColor(._2C2C2C)
         }
@@ -24,5 +28,5 @@ struct EmptyStateView: View {
 }
 
 #Preview {
-    EmptyStateView()
+    EmptyStateView(titleText: Constants.Strings.noCitySelected, subtitleText: Constants.Strings.searchForCity)
 }

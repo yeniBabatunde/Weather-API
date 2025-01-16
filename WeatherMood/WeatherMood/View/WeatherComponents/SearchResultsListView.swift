@@ -14,7 +14,7 @@ struct SearchResultsListView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 12) {
-                ForEach(weatherItems, id: \.location) { weather in
+                ForEach(weatherItems, id: \.location?.country) { weather in
                     LocationListItemView(weatherData: weather)
                         .onTapGesture {
                             onLocationSelected(weather)
@@ -28,6 +28,6 @@ struct SearchResultsListView: View {
 
 #Preview {
     SearchResultsListView(weatherItems: [], onLocationSelected: {_ in 
-        print("tapped")
+      
     })
 }

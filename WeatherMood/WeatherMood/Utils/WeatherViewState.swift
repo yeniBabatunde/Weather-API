@@ -9,11 +9,9 @@ import Foundation
 
 enum WeatherViewState {
     case empty
+    case searchDataEmpty
     case loading
     case searchResults([WeatherData])
     case loaded(WeatherData)
-}
-
-struct WeatherData {
-    var location: String?
+    case error
 }

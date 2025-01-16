@@ -14,7 +14,7 @@ struct SearchBarView: View {
         HStack {
             TextField(Constants.Strings.searchFieldPlaceholder, text: $searchText)
                 .padding(.leading, 20)
-            
+                .autocorrectionDisabled()
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.gray)
                 .padding(.trailing, 20)
