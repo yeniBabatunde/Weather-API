@@ -44,12 +44,12 @@
 ## **Screenshots** 📸  
 **List**
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ee7abc7c-2835-49e4-becf-2c7175ea1fee" alt="dashboard" width="200">
+  <img src="https://github.com/user-attachments/assets/983a75b3-7a50-482f-8c4d-ed6b9006c562" alt="dashboard" width="200">
 </div>
 
 **Details**
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/983a75b3-7a50-482f-8c4d-ed6b9006c562" alt="dashboard" width="200">
+  <img src="https://github.com/user-attachments/assets/ee7abc7c-2835-49e4-becf-2c7175ea1fee" alt="dashboard" width="200">
 </div>
 
 **App Functionality (GIF)**
