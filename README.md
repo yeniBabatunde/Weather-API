@@ -81,7 +81,7 @@
 
 1. Clone the repository or download the ZIP file:  
    ```bash
-   git clone [repository-url]
+   git clone [repository-url](https://github.com/yeniBabatunde/Weather-API.git]
    ```  
 2. Open the `.xcodeproj` file in **Xcode**.  
 3. Ensure your environment is set up with **Xcode 14 or later**.  
